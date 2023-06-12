@@ -102,11 +102,54 @@ const billA = (productPrice, tax)=>{
     return total
 }
 
-console.log(bill([2,6,8],0.6));//console prints 25.6
+console.log(billA([2,10,8],0.6));//console prints 25.6
 
 //We use methods on any data types or objects using the dot notation.
 
 /* CALLBACKS */
 
 //Callbacks are functions that are passed in as parameters inside of other functions
+
+//Example
+
+const FuncA = (callbackFunc)=>{
+    //do something
+    let valueA = 50;
+    callbackFunc(45);
+}
+
+FuncA(
+    (valuexx)=>{
+        //do something
+        console.log(valuexx)
+    }
+);
+
+//valuexx is the name of the callback function
+
+/* For Each */
+
+const people = ['mario','luigi','bill','shaun','chun-li','kahwai','pascal']
+
+const logPerson = (person ,index)=>{
+    console.log(`- How are ${person}`)//console returns 0 - How are mario
+}
+
+
+people.forEach(logPerson);
+//logPerson is the callback function
+
+const peopleA = ['mario','luigi','bill','shaun','chun-li','kahwai','pascal']
+
+let html = '';
+peopleA.forEach(
+    (person)=>{
+        //create an html template
+        html += `<li style="color:crimson">${person}</li>`
+    }
+);
+
+console.log(html);
+const ul = document.querySelector(".people")
+ul.innerHTML = html;
 
